@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load hitcount_tags %}
+{% block  content %}
+    <div class="container">
+
+        <!-- Navigarea prin postari -->
+        <div class="navigate">
+            <span><a href="{% url 'home' %}">Forum-subiecte</a> >> <a href="{{post.categories.all.0.get_url}}">{{post.categories.all.0}}</a> >> <a href="{{post.get_url}}">{{post.title}}</a></span>
+        </div>
+        <div class="topic-container">
+            <div class="head">
+                <div class="authors">Autor</div>
+                <div class="content">Subiect: {{post.title}} ({% get_hit_count for post %} vizualizari)</div>
+            </div>
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="#">{{post.user.fullname|title}}</a></div>
+                    <div>Rol</div>
+                    <img src="{{post.user.profile_pic.url}}" alt="">
+                    <div>Postari: <u>{{post.user.num_posts}}</u></div>
+                    <div>Puncte: <u>{{post.user.points}}</u></div>
+                </div>
+                <div class="content">
+                        {{post.content|safe}}
+                    <div class="comment">
+                        <button onclick="showComment()">Scrie un comentariu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sectiunea de comentarii -->
+        {% if post.closed == True %}
+        <div style="background-color:orange; color:white;font-weight:bolder;padding:20px;width:100%;">Acest subiect este inchis!</div>
+        {% else %}
+        {% if request.user.is_authenticated %}
+        <form action="." method="post">
+            {% csrf_token %}
+        <div class="comment-area hide" id="comment-area">
+            <textarea name="comment" id="" placeholder="Scrieti comentariul aici..."></textarea>
+            <input type="submit" name="comment-form" id="" value="submit">
+        </div>
+    </form>
+        {% else %}
+        <div style="background-color:orange; color:white;font-weight:bolder;padding:20px;width:100%;">Trebuie sa fiti <a href="{% url 'signin' %}"><b>conectat</b></a> pentru a lasa un comentariu!</div>
+        {% endif %}
+
+    {% endif %}
+        <!-- Arata mai multe comentarii -->
+        {% for comment in post.comments.all %}
+        <div class="comments-container">
+            <div class="head">
+                <div class="authors">Autor</div>
+                <div class="content">Comentarii</div>
+            </div>
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">{{comment.user.fullname|title}}</a></div>
+                    <div>Rol</div>
+                    <img src="{{comment.user.profile_pic.url}}" alt="">
+                    <div>Postari: <u>{{comment.user.num_posts}}</u></div>
+                    <div>Puncte: <u>{{comment.user.points}}</u></div>
+                </div>
+                <div class="content">
+                   {{comment.content}}
+                   <br>
+                   {% if request.user.is_authenticated %}
+                    <div class="comment">
+                        <button onclick="showReplies('comment{{comment.id}}')">Raspunde</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Sectiunea de raspunsuri -->
+        <form action="." method="post">
+            {% csrf_token %}
+        <div class="comment-area hide" id="comment{{comment.id}}">
+            <textarea name="reply" id="" placeholder="Scrieti raspunsurile aici..."></textarea>
+            <input type="submit" value="submit" name="reply-form">
+            <input name="comment-id" value="{{comment.id}}" type="hidden">
+        </div>
+    </form>
+        {% for reply in comment.replies.all %}
+        <div class="comments-container" style="width:95%; margin-left:5%;">
+            <div class="head">
+                <div class="authors">Autor</div>
+                <div class="content">Comentarii</div>
+            </div>
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">{{reply.user.fullname|title}}</a></div>
+                    <div>Rol</div>
+                    <img src="{{reply.user.profile_pic.url}}" alt="">
+                    <div>Postari: <u>{{reply.user.num_posts}}</u></div>
+                    <div>Puncte: <u>{{reply.user.points}}</u></div>
+                </div>
+                <div class="content">
+                   {{reply.content}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% endblock content%}

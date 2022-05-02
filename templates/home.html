@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <ul class="nav-list">
+                    <span class="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                    <li class="nav-item">
+                        <a href="home.html">Acasa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="posts.html">Postari</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="detail.html">Detalii</a>
+                    </li>
+                </ul>
+            </nav>
+        <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+        <div class="brand">Forum</div>
+        </div>
+        <!-- Caseta de cautare(Search Box) -->
+        <div class="search-box">
+            <div>
+                <select name="" id="">
+                    <option value="everything">Toate subiectele</option>
+                    <option value="titles">Titluri</option>
+                    <option value="descriptions">Descrieri</option>
+                </select>
+                <input type="text" name="q" id="" placeholder="Cauta">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Informatii generale</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+        </div>
+        <!-- Mai mult -->
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Informatii generale</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+        </div>
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Informatii generale</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="">Descriere:</a></h1>
+                    <p>Continut:Vivamus at rhoncus erat. Donec ante libero, malesuada vitae pulvinar eget, venenatis id tellus. Morbi ac arcu eget ante laoreet facilisis. Cras congue auctor volutpat. Ut vitae magna vel enim porttitor commodo ut mollis magna.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Postari | 15 Subiecte</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima postare este facuta</a> de <a href="">User</a></b>
+                    <br>
+                    pe <small>22 decembrie 2022</small>
+                </div>
+            </div>
+        </div>
+        <!-- Mai mult -->
+    </div>
+    <div>
+        <!-- Informatii despre forum -->
+        <div class="forum-info">
+            <div class="chart">
+                Forum-statistici &nbsp;<i class="fa fa-bar-chart"></i>
+            </div>
+            <div>
+             <span><u>5.699</u> Postari in <u>1.255</u> de Subiecte facute de <u>78.999</u> utilizatori</span><br>
+             <span>Ultima postare din forum: <b><a href="#">Postare noua</a></b> pe 25 decembrie 2022 de <a href="#">Utilizator</a></span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

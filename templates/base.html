@@ -1,0 +1,65 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <ul class="nav-list">
+                    <span class="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}">Acasa</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}">Deconectare</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'signup' %}">Inregistrare</a>
+                        <a href="{% url 'signin' %}">Conectare</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+        <div class="brand">Forum</div>
+        {% if user.is_authenticated %}
+        <div style="font-size: 50px;font-weight: 300px;margin-left: 100px;"><a href="{% url 'create_post' %}">Creeaza o postare</a></div>
+        {% endif %}
+        </div>
+        <!-- Caseta de cautare(Search Box) -->
+        <form action="{% url 'search_result' %}" role="form" method="GET">
+        <div class="search-box">
+            <div>
+                <select name="search-box" id="">
+                    <option value="Everything">Toate subiectele</option>
+                    <option value="Titles">Titluri</option>
+                    <option value="Descriptions">Descrieri</option>
+                </select>
+                <input type="text" name="q" id="" placeholder="Cauta">
+                <button type="submit" name="search"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+    </header>
+    {% block content%}
+    {% endblock content%}
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

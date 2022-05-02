@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block  content%}
+
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Informatii generale</h1>
+            </div>
+
+            {% for forum in forums %}
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-book"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h1><a href="{{forum.get_url}}">{{forum.title}}</a></h1>
+                    <p>Descriere: {{forum.description}}</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>{{forum.num_posts}} Postari </span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="{{forum.last_post.get_url}}">Ultima postare este facuta</a> de <a href="">{{forum.last_post.user.fullname|title}}</a></b>
+                    <br>
+                    pe <small>{{forum.last_post.date|date}}</small>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div>
+        <!-- Informatii despre forum -->
+        <div class="forum-info">
+            <div class="chart">
+                Forum-statistici &nbsp;<i class="fa fa-bar-chart"></i>
+            </div>
+            <div>
+            <span><u>{{num_posts}}</u> Postari in <u>{{num_categories}}</u> de Subiecte facute de <u>{{num_users}}</u> utilizatori</span><br>
+             <span>Ultima postare din forum: <b><a href="{{last_post.get_url}}">{{last_post.title}}</a></b> pe {{last_post.date|date}} de <a href="#">{{last_post.user.fullname|title}}</a></span>
+             <span>Vezi <a href="{% url 'latest_posts' %}">ultimele postari</a></span>
+            </div>
+        </div>
+    </div>
+    {% endblock content%}
