@@ -1,13 +1,9 @@
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.urls import path, include
-from django.views.generic.base import TemplateView
+from django.urls import path
+from .views import signup,signin,update_profile,logout
 
 urlpatterns = [
-    path('admin/', admin.site.urls), 
-    path('', include("main.urls")),
-    path('tinymce/', include('tinymce.urls')),
-    path('account/', include('register.urls')),
-    path('hitcount/', include('hitcount.urls', namespace='hitcount')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("signup/", signup, name="signup"),
+    path("signin/", signin, name="signin"),
+    path("logout/", logout, name="logout"),
+    path("update_profile/", update_profile, name="update_profile"),
+]
